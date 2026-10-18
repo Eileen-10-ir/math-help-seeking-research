@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>数学求助 · 联合参数化 · 动态证据更新</title><link rel="stylesheet" href="/styles.css"><link rel="stylesheet" href="/vendor/katex/dist/katex.min.css"><script src="/vendor/marked.umd.js" defer></script><script src="/vendor/dompurify/dist/purify.min.js" defer></script><script src="/vendor/katex/dist/katex.min.js" defer></script><script src="/render-answer.js" defer></script><script src="/app.js" defer></script></head>
+<body><main>
+ <header><div><div class="eyebrow">数学单学科 · 现场交互原型</div><h1>每次求助，都留下可解释的记录</h1><p>输入你的问题或已有步骤，查看本次判断、支持反馈与会话中的状态变化。</p></div><span id="connection" class="badge">正在连接本机服务</span></header>
+ <div class="notice">不会开始也可以求助。明确想要方法或第一步时，可以获得受限提示；证据不足则保留状态，不把措辞改变当成依赖下降。</div>
+ <section class="panel"><details id="api-setup"><summary>配置本机DeepSeek密钥</summary><p>密钥只供本次后台进程使用，不写入会话或文件。配置后才会发送实际云请求。</p><form id="key-form"><label for="api-key">官方API密钥</label><input id="api-key" type="password" autocomplete="off" spellcheck="false" required><button type="submit">本机配置</button></form><p id="key-status" aria-live="polite"></p></details></section>
+ <div class="workspace">
+  <section class="panel dialogue"><div class="section-head"><h2>数学问题与交流</h2><button id="new-session" class="quiet" type="button">新建会话</button></div>
+   <label for="task">数学题目来源</label><select id="task" disabled></select><div id="task-question" class="task-box"></div>
+   <div id="history" class="history" aria-live="polite"></div>
+   <form id="prompt-form"><label id="prompt-label" for="prompt">先写下题目和想问的内容</label><textarea id="prompt" rows="4" maxlength="2000" placeholder="例如：解x²−5x+6=0，可以先给我一些思路吗？" required></textarea>
+    <div class="compose-footer"><span id="length" class="muted">0 / 2000</span><button id="submit" type="submit" disabled>分析并继续</button></div>
+   </form><div id="error" role="alert" hidden></div>
+  </section>
+  <aside>
+   <section class="panel"><div class="section-head"><h2>本轮即时判断</h2><span id="turn-badge" class="badge">尚无输入</span></div>
+    <div id="current-reading" class="decision" aria-live="polite">等待你的第一条输入</div><p id="current-reading-reason" class="muted">从第一轮开始分析本轮表达；不必等待三轮。</p><div id="scores"></div>
+   </section>
+   <section class="panel"><h2>本轮支持路径</h2>
+    <div id="decision" class="decision">等待你的第一条输入</div><p id="decision-reason" class="muted">每次判断都保留原文与依据。</p><div id="evidence"></div>
+   </section>
+   <section class="panel"><h2>累计状态与变化趋势</h2>
+    <div class="metrics"><div><span>高类信号EWMA</span><strong id="risk">未知</strong></div><div><span>可判断 / 总回合</span><strong id="coverage">0 / 0</strong></div><div><span>本轮变化</span><strong id="change">—</strong></div></div>
+    <div id="chart" class="chart"></div><div id="profile-note" class="muted">尚无足够记录。</div><div id="event-counts" class="event-counts"></div>
+   </section>
+   <section class="panel"><h2>记录与研究说明</h2><p id="session-info" class="muted">新会话使用匿名编号，输入仅存于本机。</p><a id="export" class="button-link" href="#" hidden>导出当前会话</a>
+    <details><summary>机制与系数来源</summary><p>高类本地固定引导；中类追加限制模板再调用云端；低类直接云端。明确方法求助但等级待确认时，也可提供受限提示，状态不更新。模板已发送不代表模型一定遵从。</p><p id="coefficient-source"></p><p id="cloud-status"></p><p>联合表达v2文本候选：历史47名学生内部首轮Macro-F1约0.678，准确率约79.6%，后续共同学生切分四类约0.599，高类召回约0.286。后续门槛已有训练内选择，仍需核验误更新，模型分数未校准；操作者身份未验证，现场会话不自动计为研究样本。</p><p id="versions"></p></details>
+   </section>
+  </aside>
+ </div><footer>新回合来自操作者现场输入。系统不会生成学生的下一条消息，也不会补造依赖下降轨迹。</footer>
+</main></body></html>
