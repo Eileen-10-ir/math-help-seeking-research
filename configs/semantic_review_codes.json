@@ -1,0 +1,68 @@
+{
+  "version": "semantic-review-v1-20261019",
+  "A_request": [
+    "final_answer",
+    "full_solution",
+    "method_or_reason",
+    "local_feedback",
+    "none",
+    "unclear"
+  ],
+  "L_goal": [
+    "task_completion",
+    "understand_current",
+    "transfer",
+    "not_displayed",
+    "unclear"
+  ],
+  "P_primary": [
+    "math_step",
+    "method_clue",
+    "claimed_attempt",
+    "autonomous_statement",
+    "autonomy_declaration",
+    "none_displayed",
+    "unclear"
+  ],
+  "P_evidence_types": "optional pipe-separated subset of P_primary except unclear",
+  "S_form": [
+    "deictic",
+    "topic",
+    "problem_or_local_context",
+    "problem_with_focus",
+    "unclear"
+  ],
+  "context_sufficiency": [
+    "sufficient",
+    "insufficient",
+    "unclear"
+  ],
+  "answer_refusal": [
+    "yes",
+    "no",
+    "unclear"
+  ],
+  "compatibility": [
+    "consistent",
+    "mismatch",
+    "unclear"
+  ],
+  "defect_flags": [
+    "REQ",
+    "GOAL",
+    "PART",
+    "INFO",
+    "MATH",
+    "CONFLICT",
+    "STYLE",
+    "CONTEXT"
+  ],
+  "case_disposition": [
+    "pass",
+    "revise",
+    "undetermined"
+  ],
+  "overall_dependence_relabel_required": false,
+  "primary_agreement_includes_unclear": true,
+  "human_reviews_completed": false
+}

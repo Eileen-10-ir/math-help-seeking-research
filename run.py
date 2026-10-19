@@ -33,6 +33,9 @@ if __name__=='__main__':
     sub.add_parser('budget',help='容量先验核查＋0/45/91合成数量实验，只运行一次防止覆盖')
     a=p.parse_args()
     assert sys.flags.no_user_site,'请使用 python -s -X utf8 run.py ...'
+    if a.mode in ['serve','compare']:
+        from scripts.api_config import load_api_key
+        load_api_key()
     sync_sources()
     if a.mode in ['check','serve','compare']:
         args=[a.mode]

@@ -1,24 +1,35 @@
-# Default deny: reviewed common source/docs only.
+# Default deny: reviewed common source/docs/templates only.
 *
 !*/
 !/.gitattributes
 !/.gitignore
 !/AGENTS.md
 !/README.md
+!/configs/semantic_review_codes.json
+!/docs/api_access.md
 !/docs/architecture.md
 !/docs/code_inventory.md
 !/docs/metrics.md
 !/docs/parameters.md
+!/docs/phrase_bank_provenance.md
+!/docs/pipeline_overview.md
 !/docs/response_quality.md
 !/docs/results.md
+!/docs/review_templates/semantic_stage1_blank.csv
+!/docs/review_templates/semantic_stage2_blank.csv
 !/docs/routing_policy.md
 !/docs/semantic_review.md
+!/docs/semantic_review_codebook.md
 !/docs/synthetic_budget.md
 !/docs/system_comparison.md
 !/docs/text_generation.md
 !/project_manifest.json
 !/requirements.txt
 !/run.py
+!/scripts/__init__.py
+!/scripts/api_config.py
+!/scripts/check_api.py
+!/scripts/configure_api.py
 !/scripts/restore_private.py
 !/src/frozen_core/G0_G1严谨对照20261014/code/g1_generator.py
 !/src/frozen_core/云边教学与成本复核20261001/code/routing_v5.py

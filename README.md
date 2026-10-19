@@ -2,6 +2,8 @@
 
 面向中小学生数学求助，研究真实特征校准的受控文本生成、单轮求助识别、动态状态更新，以及分级云边支持。当前已完成工程闭环，正在开展生成语义独立审核和正式回复质量—资源对照。
 
+**第一次了解项目，请先看[各阶段流程总表：输入—方法—输出—参数—验证状态](docs/pipeline_overview.md)。**再按[源码地图](docs/architecture.md)查实现，不需要先读全部代码。
+
 ## 项目结构
 
 ```text
@@ -42,11 +44,14 @@ python -s -X utf8 run.py serve --port 8771
 
 结果写到`.private/workspace/交付结果`，生成器数量实验在相应私有实验目录。原标签、数据和归档结果保留。真实API密钥只放本机`MATH_DEEPSEEK_API_KEY`环境变量；实际模型、usage、失败和费用依据必须保存。
 
+小组可以向队友提供授权共享的API密钥用于测试，通过私密渠道交付、在各自本机配置。也可运行`python -s -X utf8 scripts/configure_api.py`交互式保存到Git忽略目录，随后网页和真实对照入口会自动读取。[API配置和一次连通性检查](docs/api_access.md)说明了具体步骤，仓库不保存真实密钥。
+
 ## 方法与证据
 
 - [流程与源码地图](docs/architecture.md)：生成→识别→证据接纳→EWMA→画像→连续对话→三路支持。
 - [参数来源](docs/parameters.md)：数据校准、训练内选择和固定工程参数分别说明。
 - [文本生成与实际句库](docs/text_generation.md)：参数到底控制什么、句子从哪里来。
+- [语言部件来源与AI辅助说明](docs/phrase_bank_provenance.md)：区分队友原交接、我们本地设计和运行时生成。
 - [ALSP部分审核](docs/semantic_review.md)：审核合成文本与配置的对应，不重新划分真实整体标签。
 - [系统比较协议](docs/system_comparison.md)、[质量评分规程](docs/response_quality.md)、[指标口径](docs/metrics.md)。
 - [当前结果](docs/results.md)、[合成数量比较](docs/synthetic_budget.md)。
