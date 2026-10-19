@@ -52,7 +52,7 @@ python -s -X utf8 run.py serve --port 8771
 - [参数来源](docs/parameters.md)：数据校准、训练内选择和固定工程参数分别说明。
 - [文本生成与实际句库](docs/text_generation.md)：参数到底控制什么、句子从哪里来。
 - [语言部件来源与AI辅助说明](docs/phrase_bank_provenance.md)：区分队友原交接、我们本地设计和运行时生成。
-- [ALSP部分审核](docs/semantic_review.md)：审核合成文本与配置的对应，不重新划分真实整体标签。
+- [ALSP部分审核](docs/semantic_review.md)与[数字锚点表](docs/semantic_score_anchors.md)：记录语义及0代码＋1—5分，不重新划分真实整体标签。
 - [系统比较协议](docs/system_comparison.md)、[质量评分规程](docs/response_quality.md)、[指标口径](docs/metrics.md)。
 - [当前结果](docs/results.md)、[合成数量比较](docs/synthetic_budget.md)。
 

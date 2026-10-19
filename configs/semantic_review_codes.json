@@ -64,5 +64,27 @@
   ],
   "overall_dependence_relabel_required": false,
   "primary_agreement_includes_unclear": true,
-  "human_reviews_completed": false
+  "human_reviews_completed": false,
+  "numeric_scoring_version": "semantic-score-audit-v1-20261019",
+  "audit_score_display_values": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "valid_ordered_scores": [
+    1,
+    2,
+    3,
+    4,
+    5
+  ],
+  "unassessable_display_code": 0,
+  "zero_is_NA_not_lowest_score": true,
+  "zero_excluded_from_means": true,
+  "original_real_scores_overwritten": false,
+  "overall_levels_recomputed": false,
+  "integer_scores_only": true
 }

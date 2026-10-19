@@ -1,1 +1,1 @@
-﻿review_id,question_context,prompt_text,A_request,L_goal,P_primary,P_evidence_types,S_form,context_sufficiency,answer_refusal,evidence_quote,defect_flags,uncertain_reason,notes,reviewer_code,rubric_version
+﻿review_id,question_context,prompt_text,A_request,L_goal,P_primary,P_evidence_types,S_form,context_sufficiency,answer_refusal,evidence_quote,defect_flags,uncertain_reason,notes,reviewer_code,rubric_version,A_audit_score,L_audit_score,S_audit_score,P_audit_score,zero_score_reason,score_rubric_version
