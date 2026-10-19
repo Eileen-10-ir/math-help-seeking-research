@@ -41,3 +41,7 @@
 |[run_system_comparison.py](../src/frozen_core/系统支持修正v7_20261014/code/run_system_comparison.py)|Same frozen inference, context and cases; local routing check or bounded real API.|
 |[run_budget.py](../src/frozen_core/合成数量学习曲线20261018/code/run_budget.py)|Nested real-student budget curve, per-class nested synthetic prefixes.|
 |[check_capacity.py](../src/frozen_core/合成数量学习曲线20261018/code/check_capacity.py)|Structural feasibility before comparing scores; first counterexample suffices.|
+# 审核回交工具补充
+
+`scripts/review_tools.py`输入私有审核表契约及一份/两份独立Excel或CSV回交，输出字段与来源完整性校验、有效配对数、原始一致率及适用κ。0分按NA排除，评分不完整不冒充完成，裁决不覆盖原独立分；不调用API、不自动打分、不修改真实标签。运行方式见[回交流程](review_return_workflow.md)。
+

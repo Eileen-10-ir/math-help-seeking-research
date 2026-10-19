@@ -57,6 +57,7 @@ python -s -X utf8 run.py serve --port 8771
 - [文本生成与实际句库](docs/text_generation.md)：参数到底控制什么、句子从哪里来。
 - [语言部件来源与AI辅助说明](docs/phrase_bank_provenance.md)：区分队友原交接、我们本地设计和运行时生成。
 - [ALSP部分审核](docs/semantic_review.md)与[数字锚点表](docs/semantic_score_anchors.md)：记录语义及0代码＋1—5分，不重新划分真实整体标签。
+- [审核精简参考表](docs/review_quick_reference.md)与[回交校验及一致性计算](docs/review_return_workflow.md)：当前每位独立评审44条合成＋16条首轮抽核＋16条后续回应；私有表另行提供，Git不含逐条内容。
 - [系统比较协议](docs/system_comparison.md)、[质量评分规程](docs/response_quality.md)、[指标口径](docs/metrics.md)。
 - [当前结果](docs/results.md)、[合成数量比较](docs/synthetic_budget.md)。
 

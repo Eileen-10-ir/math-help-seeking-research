@@ -23,6 +23,8 @@
 !/docs/r3_and_guidance.md
 !/docs/response_quality.md
 !/docs/results.md
+!/docs/review_quick_reference.md
+!/docs/review_return_workflow.md
 !/docs/review_templates/semantic_stage1_blank.csv
 !/docs/review_templates/semantic_stage2_blank.csv
 !/docs/routing_policy.md
@@ -40,6 +42,7 @@
 !/scripts/check_api.py
 !/scripts/configure_api.py
 !/scripts/restore_private.py
+!/scripts/review_tools.py
 !/src/frozen_core/G0_G1严谨对照20261014/code/g1_generator.py
 !/src/frozen_core/云边教学与成本复核20261001/code/routing_v5.py
 !/src/frozen_core/云边教学与成本复核20261001/code/runtime_server_v5.py
