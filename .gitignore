@@ -1,4 +1,4 @@
-# Default deny: reviewed common source/docs/templates only.
+# Default deny: reviewed common source/docs/schema/aggregates only.
 *
 !*/
 !/.gitattributes
@@ -6,14 +6,21 @@
 !/AGENTS.md
 !/README.md
 !/configs/semantic_review_codes.json
+!/data/public/README.md
+!/data/public/real_aggregate_counts.json
+!/data/public/schema.sql
+!/data/public/schema_dictionary.json
+!/data/public/schema_only.db
 !/docs/api_access.md
 !/docs/architecture.md
 !/docs/code_inventory.md
+!/docs/data_access.md
 !/docs/data_route_and_proposal.md
 !/docs/metrics.md
 !/docs/parameters.md
 !/docs/phrase_bank_provenance.md
 !/docs/pipeline_overview.md
+!/docs/r3_and_guidance.md
 !/docs/response_quality.md
 !/docs/results.md
 !/docs/review_templates/semantic_stage1_blank.csv

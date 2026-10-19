@@ -1,0 +1,251 @@
+{
+  "release": "schema-only-20261019",
+  "participant_records": 0,
+  "tables": {
+    "annotations": [
+      {
+        "name": "annotation_id",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": true
+      },
+      {
+        "name": "sample_id",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "annotator",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "score_A",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "score_L",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "score_S",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "score_P",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "dep_level",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "is_disputed",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "annotated_at",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      }
+    ],
+    "samples": [
+      {
+        "name": "sample_id",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": true
+      },
+      {
+        "name": "student_id",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "session_id",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "round",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "pair_id",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "task_type",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "source",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "src_real",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "src_llm",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "src_eedi",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "src_synth",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "prompt_text",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "en_text",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "ai_type",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "ai_label",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "prev_level",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "dep_change",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "pre_A",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "pre_L",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "pre_S",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "pre_P",
+        "sqlite_type": "INTEGER",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "ref_level",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "note",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "final_level",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "subject",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      }
+    ],
+    "students": [
+      {
+        "name": "student_id",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": true
+      },
+      {
+        "name": "grade",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "gender",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      },
+      {
+        "name": "ai_frequency",
+        "sqlite_type": "TEXT",
+        "not_null": false,
+        "primary_key": false
+      }
+    ]
+  },
+  "notes": [
+    "src_* indicate source; pre_* are legacy reference values, not necessarily human ratings.",
+    "Real R3 annotation score_A/L/S/P are NULL; dep_level stores the historical overall class.",
+    "Original historical database contains other sources and synthetic R3, not all are current training data."
+  ]
+}

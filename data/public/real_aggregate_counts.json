@@ -1,0 +1,43 @@
+{
+  "version": "20261019",
+  "independent_students": 47,
+  "real_expressions": 94,
+  "final_level_counts": {
+    "R1": {
+      "high": 12,
+      "low": 4,
+      "medium": 31
+    },
+    "R3": {
+      "high": 7,
+      "low": 5,
+      "medium": 21,
+      "接受引导/非提问": 14
+    }
+  },
+  "annotation_rows_and_nonnull_scores": [
+    {
+      "round": "R1",
+      "annotation_rows": 94,
+      "nonnull_A": 94,
+      "nonnull_L": 94,
+      "nonnull_S": 94,
+      "nonnull_P": 94
+    },
+    {
+      "round": "R3",
+      "annotation_rows": 94,
+      "nonnull_A": 0,
+      "nonnull_L": 0,
+      "nonnull_S": 0,
+      "nonnull_P": 0
+    }
+  ],
+  "not_released": [
+    "participant IDs",
+    "individual texts",
+    "individual scores",
+    "demographic cross-tabs"
+  ],
+  "meaning": "Historical annotated two-expression survey, not randomized intervention or longitudinal efficacy data."
+}
