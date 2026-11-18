@@ -2,7 +2,7 @@
 from pathlib import Path
 import argparse,hashlib,json,zipfile
 ROOT=Path(__file__).resolve().parents[1];WORK=ROOT/'.private/workspace'
-EXPECTED='76f0b9ddb20b319b60e7b6944d8c56629e90aefd9d780e0798799f099c1b7c9f'
+EXPECTED='0976beea3873a83eb96d5c8672f49ac580c58921c1df8c6a468c1aaa39ec4042'
 PREFIX='共享研究资料/研究工作区/'
 if __name__=='__main__':
     p=argparse.ArgumentParser();p.add_argument('--archive',type=Path,required=True);a=p.parse_args()

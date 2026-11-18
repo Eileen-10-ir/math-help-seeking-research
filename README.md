@@ -1,10 +1,12 @@
 # 中小学生数学AI求助研究
 
-面向中小学生数学求助，研究真实特征校准的受控文本生成、单轮求助识别、动态状态更新，以及分级云边支持。当前已完成工程闭环，正在开展生成语义独立审核和正式回复质量—资源对照。
+面向中小学生数学求助，研究真实特征校准的受控文本生成、单轮求助识别、动态状态更新，以及分级云边支持。已完成工程闭环。
+
+**2026-11-18更新：默认网页接入需求感知B3支持。识别与状态保留已验收共同版；新增选参模型未显示稳定优势，只作为研究候选。** [实验结论与发布决定](docs/parameter_validation_20261118.md)记录参数、结果及边界；[参数实验复现](experiments/parameter_selection/README.md)提供命令。
 
 **第一次了解项目，可以先看[各阶段流程总表：输入—方法—输出—参数—验证状态](docs/pipeline_overview.md)，了解各阶段输入输出、熟悉项目；再按[源码地图](docs/architecture.md)查实现。**
 
-数据主线是：**真实训练数据校准 → 行为配置抽样 → 联合表达器生成学生prompt → 去重、程序核验与独立抽审 → 识别训练及真实留出评价。**其中独立抽审待完成。[与申报书原参数化设计的区别和当前使用理由](docs/data_route_and_proposal.md)单列说明。
+数据主线是：**真实训练数据校准 → 行为配置抽样 → 联合表达器生成学生prompt → 去重、程序核验与独立抽审 → 识别训练及真实留出评价。**审核结果对应具体批次；新增参数候选不能继承旧批次的独立审核状态。[与申报书原参数化设计的区别和当前使用理由](docs/data_route_and_proposal.md)单列说明。
 
 公开代码无需逐个邀请即可查阅；[数据库空结构和汇总数据](data/public/README.md)一并提供。完整复现仍需私有研究包，原始问卷与学生逐条记录不公开，详见[数据访问范围](docs/data_access.md)。[R3覆盖情况与固定引导候选方案](docs/r3_and_guidance.md)说明首轮和后续回应如何区分；候选方案尚未替换当前算法。
 
@@ -32,6 +34,8 @@ python -m pip install -r requirements.txt
 python -s -X utf8 scripts/restore_private.py --archive "共享可复现数据.zip的实际位置"
 python -s -X utf8 run.py check
 python -s -X utf8 run.py serve --port 8771
+# 原三级方案：run.py serve-frozen --port 8773
+# 连续支持候选：run.py serve --policy revision --port 8772
 ```
 
 网页为`http://127.0.0.1:8771/`。`check`使用假API，包含契约核验、识别指标复算、状态与连续HTTP、四组离线比较；不产生付费调用。私有ZIP中的历史材料只在`.private/workspace`还原，不作为Git共用源码。
@@ -52,6 +56,8 @@ python -s -X utf8 run.py serve --port 8771
 
 ## 方法与证据
 
+历史候选（2026-10-22）：[带来源的对话记忆候选](docs/conversation_memory.md)已完成独立开发验收。用`run.py serve-memory`运行，原方案现在通过`serve-frozen`运行；`compare`保留旧协议，新增六组比较用`study system`；核对模板和未分级帮助另有显式开关，不把记忆改进混作分类准确率提升。
+
 - [流程与源码地图](docs/architecture.md)：生成→识别→证据接纳→EWMA→画像→连续对话→三路支持。
 - [参数来源](docs/parameters.md)：数据校准、训练内选择和固定工程参数分别说明。
 - [文本生成与实际句库](docs/text_generation.md)：参数到底控制什么、句子从哪里来。
@@ -65,4 +71,14 @@ python -s -X utf8 run.py serve --port 8771
 
 真实数据47名学生、两次表达共94条；整体标签保留，ALSP均值用于生成校准，线上未自动逐项打分。当前共同版首轮混合文本LR内部宏F1约0.678、准确率79.6%；后续四类宏F1约0.599。新数量实验固定tau1时，仅真实0.734强于加45/91条的0.702/0.679，不宣称合成增强已胜出。重复切分仍是47名独立学生。
 
-三路按最终档位执行：低直接云、中附限制后云、高本地固定提示；本轮等级、历史保护后档位及实际路径分别记录，未知/确认单列。工程跑通不等于回复质量优势或真实学生行为改善。
+默认B3结合等级、当前需求和本地能力分配本地或云端支持，低类也可受教学约束；原低直接云/中受限云/高本地的三级方案保留为对照。等级、状态与实际路径分别记录。工程跑通不等于回复质量优势或真实学生行为改善。
+
+## 新增研究与支持代码
+
+- `src/support_versions/midterm_support.py`：队友原B2/B3/B4实现，字节级保留。
+- `src/latest_runtime.py`：B3接入原识别与状态，保留当前题目及实际对话。
+- `src/support_versions/support_v2.py`：连续支持修订候选；尚待独立质量评分。
+- `experiments/parameter_selection/`：训练内选参、生成消融、状态敏感性和统一系统实测。
+- `data/public/parameter_validation_20261118/`：汇总结果；逐条预测及调用日志不公开。
+
+默认网页仍使用原共享包的识别模型，无需更换模型文件。新增参数候选不会自动上线；API密钥继续仅在各自本机配置。系统实验额外输入通过私有补充ZIP恢复，不随Git公开。

@@ -1,5 +1,10 @@
 # 共用流程与源码地图
 
+## 2026-11-18 当前使用版本
+
+默认网页使用 **需求感知B3支持＋冻结识别器/状态**；连续支持修订用显式开关，新选参识别器未上线。先看[本轮参数实验和发布决定](parameter_validation_20261118.md)。下面保留原共同版说明，用于追溯；其中的“当前”“待审核”等状态对应原归档日期，不能代替本次版本决定。
+
+
 研究代码保持算法内容不变，只整理目录与运行入口。内部来源目录用于兼容现有模型与冻结契约，不代表多个默认版本。完整源码清单见[code_inventory.md](code_inventory.md)。
 
 |环节|实现|入口|输入|输出|
@@ -12,7 +17,7 @@
 |新证据接纳|[evidence_runtime.py](../src/frozen_core/数学主线严谨重跑20260930/code/evidence_runtime.py)|assess / behavioral_evidence|当前表达、分数、前次支持|事件/行为/接纳或保持理由|
 |状态/画像|[state_v5.py](../src/frozen_core/数学共同主线定版20261018/code/state_v5.py)|advance / State|旧状态、有效证据、参数|EWMA、最终档位、历史解除/趋势|
 |连续交互|[runtime_current.py](../src/frozen_core/数学共同主线定版20261018/code/runtime_current.py)|ConversationService|题目、当前输入、实际历史|会话/SQLite记录/连续回复|
-|三路支持|[routing_v7.py](../src/frozen_core/数学交互与论文初稿20261009/code/routing_v7.py)|support|最终档位、题目/历史、网关|直接云/受限云/固定本地|
+|三路支持|[routing_v8.py](../src/frozen_core/数学共同主线定版20261018/code/routing_v8.py)|support|最终档位、题目/历史、网关|直接云/受限云/高档通用本地引导；v7保留为先前实现|
 |系统正式对照|[run_system_current.py](../src/frozen_core/数学共同主线定版20261018/code/run_system_current.py)|run|固定病例与一次共同分析|四组实际输出或离线路由记录|
 |独立回复评分材料|[prepare_response_review.py](../src/frozen_core/数学共同主线定版20261018/code/prepare_response_review.py)|main|真实API记录|隐藏策略标签的双人空表，不自动打分|
 

@@ -1,0 +1,41 @@
+{
+  "fixed_classifier": {
+    "C": 2,
+    "ngram": 4,
+    "balance": true
+  },
+  "generator": {
+    "tau": 1.0,
+    "mult": 2,
+    "ratio": "old"
+  },
+  "results": {
+    "ALSP_mean": {
+      "complete_repetitions": 15,
+      "macro_f1": 0.6841320137908836,
+      "accuracy": 0.7985815602836879
+    },
+    "ALP_mean": {
+      "complete_repetitions": 15,
+      "macro_f1": 0.7086549478113398,
+      "accuracy": 0.8184397163120566
+    },
+    "uniform_mean": {
+      "complete_repetitions": 15,
+      "macro_f1": 0.7096247317467304,
+      "accuracy": 0.8113475177304964
+    },
+    "ALSP_rater_A": {
+      "complete_repetitions": 15,
+      "macro_f1": 0.693368918317004,
+      "accuracy": 0.7985815602836878
+    },
+    "ALSP_rater_B": {
+      "complete_repetitions": 15,
+      "macro_f1": 0.6368002231223083,
+      "accuracy": 0.7843971631205674
+    }
+  },
+  "max_vocabulary": 4710,
+  "role": "sensitivity only; no automatic promotion"
+}

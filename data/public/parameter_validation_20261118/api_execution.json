@@ -1,0 +1,11 @@
+{
+  "calls": 82,
+  "successes": 82,
+  "tokens": 17001,
+  "returned_models": {
+    "deepseek-flash": 82
+  },
+  "amount_cny": null,
+  "student_raw_records_sent": 0,
+  "quality_assessed": false
+}

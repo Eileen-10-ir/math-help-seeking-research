@@ -1,0 +1,18 @@
+[
+  {
+    "stage": "R1",
+    "ngram": 4,
+    "rows": 141,
+    "vocabulary_size": 5050,
+    "cap": 12000,
+    "at_cap": false
+  },
+  {
+    "stage": "R3",
+    "ngram": 4,
+    "rows": 47,
+    "vocabulary_size": 1477,
+    "cap": 6000,
+    "at_cap": false
+  }
+]

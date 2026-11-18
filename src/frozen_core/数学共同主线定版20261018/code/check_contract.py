@@ -1,11 +1,13 @@
 """Portable hash and chain identity verification."""
 from pathlib import Path
 import json,hashlib
+from routing_v8 import ROUTING_VERSION
 OUT=Path(__file__).resolve().parents[1];ROOT=OUT.parent
 def read(p):return json.loads(p.read_text(encoding='utf-8'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def check():
     c=read(OUT/'data/统一主线交接契约.json')
+    assert c['support']==ROUTING_VERSION,('Support version mismatch',c['support'],ROUTING_VERSION)
     for name,h in c['watched_sha256'].items():assert sha(ROOT/name)==h,('Changed release input',name)
     card=read(OUT/'data/runtime_model_card.json');cfg=read(OUT/'data/runtime_state_config_v4.json')
     assert card['model_version']==c['primary_model'] and card['rule_version']==cfg['rule_version']==c['state_rule']

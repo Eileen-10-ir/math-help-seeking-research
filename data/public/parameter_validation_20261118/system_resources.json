@@ -1,0 +1,68 @@
+{
+  "edge": {
+    "n_inputs": 24,
+    "calls": 0,
+    "successes": 0,
+    "tokens": 0,
+    "truncated": 0,
+    "failures": 0,
+    "mean_ms": 0.24077916672619418,
+    "quality_status": "awaiting_independent_scoring",
+    "cost_cny": null
+  },
+  "cloud_direct": {
+    "n_inputs": 24,
+    "calls": 24,
+    "successes": 24,
+    "tokens": 3860,
+    "truncated": 0,
+    "failures": 0,
+    "mean_ms": 2092.0741875002022,
+    "quality_status": "awaiting_independent_scoring",
+    "cost_cny": null
+  },
+  "cloud_constrained": {
+    "n_inputs": 24,
+    "calls": 24,
+    "successes": 24,
+    "tokens": 5700,
+    "truncated": 0,
+    "failures": 0,
+    "mean_ms": 2128.2727458332906,
+    "quality_status": "awaiting_independent_scoring",
+    "cost_cny": null
+  },
+  "B2": {
+    "n_inputs": 24,
+    "calls": 7,
+    "successes": 7,
+    "tokens": 1619,
+    "truncated": 0,
+    "failures": 0,
+    "mean_ms": 581.2118249999685,
+    "quality_status": "awaiting_independent_scoring",
+    "cost_cny": null
+  },
+  "B3": {
+    "n_inputs": 24,
+    "calls": 5,
+    "successes": 5,
+    "tokens": 1111,
+    "truncated": 0,
+    "failures": 0,
+    "mean_ms": 400.6374791666379,
+    "quality_status": "awaiting_independent_scoring",
+    "cost_cny": null
+  },
+  "revision": {
+    "n_inputs": 24,
+    "calls": 5,
+    "successes": 5,
+    "tokens": 1040,
+    "truncated": 0,
+    "failures": 0,
+    "mean_ms": 389.0512916667224,
+    "quality_status": "awaiting_independent_scoring",
+    "cost_cny": null
+  }
+}

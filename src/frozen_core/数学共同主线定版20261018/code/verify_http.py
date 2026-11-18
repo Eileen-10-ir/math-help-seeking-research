@@ -9,7 +9,7 @@ os.environ['NO_PROXY']='127.0.0.1,localhost';os.environ['no_proxy']='127.0.0.1,l
 from runtime_current import ConversationService,handler,ThreadingHTTPServer
 from cloud_gateway import CloudGateway,CloudConfig
 from state_v5 import State,advance,RULE_VERSION
-from routing_v7 import support,MEDIUM_SUFFIX
+from routing_v8 import support,MEDIUM_SUFFIX,HIGH_REPLY,HIGH_TEMPLATE_ID,ROUTING_VERSION
 from evidence_runtime import TASKS
 
 def main(dest):
@@ -35,6 +35,10 @@ def main(dest):
             reply=support(text,'quadratic',TASKS['quadratic'],a,gateway,[])
             assert reply['route_executed']==('edge_fixed' if wanted=='high' else 'cloud_direct')
             assert reply['external_cloud_attempts']==0;checks[wanted+'_actual_state_route']=True
+            if wanted=='high':
+                assert reply['text']==HIGH_REPLY and reply['fixed_template_id']==HIGH_TEMPLATE_ID
+                assert reply['routing_version']==ROUTING_VERSION
+                checks['high_uses_generic_local_reply']=True
         a=advance(State(),'请提供起步思路。',{'high':.1,'medium':.8,'low':.1},service.state_config)
         reply=support('请提供起步思路。','quadratic',TASKS['quadratic'],a,gateway,[])
         assert reply['route_executed']=='cloud_constrained' and requests[-1]['messages'][-1]['content']=='请提供起步思路。\n\n'+MEDIUM_SUFFIX

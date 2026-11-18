@@ -1,6 +1,7 @@
 """Capture the selected working point after documents and checks exist."""
 from pathlib import Path
 import json,hashlib
+from routing_v8 import ROUTING_VERSION
 OUT=Path(__file__).resolve().parents[1];ROOT=OUT.parent
 def read(p):return json.loads(p.read_text(encoding='utf-8'))
 def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
@@ -21,10 +22,11 @@ if __name__=='__main__':
         paths.update((ROOT/folder).glob('*.py'))
     paths.update([ROOT/'参数验证与生成器比较20261014/四维均值_真实R1_47条.csv',
         ROOT/'统一数据与交接准备20261014/data/真实行为类型解释_机器候选.csv'])
-    contract={'version':'math-shared-handoff-20261018-r1','primary_model':card['model_version'],
+    contract={'version':'math-shared-handoff-20261021-generic-edge-r1','primary_model':card['model_version'],
         'first_variant':card['active_variant'],'following_variant':card['following_variant'],'generator':'joint-expression-v2-20261014',
         'state_rule':cfg['rule_version'],'stage_cutoffs':cfg['stage_cutoffs'],'alpha':cfg['lambda'],
-        'history_policy':cfg['history_policy'],'history_high_threshold':.5,'support':'conversation-support-v7-20261014',
+        'history_policy':cfg['history_policy'],'history_high_threshold':.5,'support':ROUTING_VERSION,
+        'support_change_scope':'high-tier local reply text only; classifier, state, cutoffs and cloud suffix unchanged',
         'environment':original['environment'],'data':{'real_students':47,'expressions':94,'fold_synthetics':1820,
             'outer_repeats':5,'outer_folds_per_repeat':4,'runtime_first_training':138,'runtime_following_training':47},
         'evaluation':'internal retrospective development; common student outer folds; no untouched external test',

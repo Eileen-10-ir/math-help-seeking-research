@@ -1,0 +1,7 @@
+{
+  "teammate_original_sha256": "003f59b97f0c42322f9a2eb6ac45d746e7c0760db3aa962dfa0be5f84fc42bc5",
+  "unchanged_copy": "src/support_versions/midterm_support.py",
+  "local_revision": "src/support_versions/support_v2.py",
+  "previous_local_continuity": "src/support_versions/continuity.py",
+  "scope": "Original B2/B3/B4 preserved; local candidate explicitly separate"
+}

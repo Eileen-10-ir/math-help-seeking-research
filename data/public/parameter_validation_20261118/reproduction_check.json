@@ -1,0 +1,7 @@
+{
+  "outer_splits_reproduced": 1,
+  "selected_parameters_equal": true,
+  "all_candidate_scores_equal": true,
+  "heldout_labels_equal": true,
+  "maximum_probability_difference": 5.051514762044462e-15
+}

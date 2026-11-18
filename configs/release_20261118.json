@@ -1,0 +1,13 @@
+{
+  "release": "math-demand-aware-support-20261118",
+  "default_support": "B3",
+  "optional_support": "revision",
+  "recognizer": "math-joint-v2-state5-20261018",
+  "recognizer_replaced": false,
+  "state_replaced": false,
+  "new_selected_models_status": "research candidates; not promoted because expanded selection did not establish benefit",
+  "profile_change": "show numerical evidence and valid updates, remove heuristic improvement label",
+  "quality_status": "independent scoring pending",
+  "frozen_reference": "serve-frozen",
+  "default_command": "python -s -X utf8 run.py serve"
+}

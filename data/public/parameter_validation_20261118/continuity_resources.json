@@ -1,0 +1,20 @@
+{
+  "B3": {
+    "n_turns": 15,
+    "n_dialogues": 4,
+    "calls": 4,
+    "tokens": 1161,
+    "failures": 0,
+    "scope": "paired prefix replay; fixed supplied histories, not autonomous rollout or learning outcome",
+    "H_scoring": "pending"
+  },
+  "revision": {
+    "n_turns": 15,
+    "n_dialogues": 4,
+    "calls": 4,
+    "tokens": 887,
+    "failures": 0,
+    "scope": "paired prefix replay; fixed supplied histories, not autonomous rollout or learning outcome",
+    "H_scoring": "pending"
+  }
+}

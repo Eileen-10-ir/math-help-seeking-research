@@ -1,0 +1,40 @@
+{
+  "scope": "constructed engineering signals, not real longitudinal students",
+  "rows": 29700,
+  "configurations": 110,
+  "unchanged_runtime": true,
+  "baseline": [
+    {
+      "split": "development",
+      "alpha": 0.65,
+      "threshold": 0.5,
+      "streak": 2,
+      "encoding": "hybrid",
+      "protect": true,
+      "error": 0.10340778880921864,
+      "false_restriction": 0.09972285823593012,
+      "missed_high": 0.06402191374768812,
+      "switches": 3.6148148148148147,
+      "constructed_mse": 0.11619891244865958
+    },
+    {
+      "split": "held_variants",
+      "alpha": 0.65,
+      "threshold": 0.5,
+      "streak": 2,
+      "encoding": "hybrid",
+      "protect": true,
+      "error": 0.10788202084563192,
+      "false_restriction": 0.10591795356097415,
+      "missed_high": 0.06677688035048829,
+      "switches": 3.6148148148148147,
+      "constructed_mse": 0.11828227350808504
+    }
+  ],
+  "decision": "No automatic parameter promotion from constructed targets. Report error tradeoffs and validate on context cases.",
+  "ewma_properties": {
+    "weights": "alpha*(1-alpha)^k",
+    "constant_input_error": "(1-alpha)^k * initial_error",
+    "alpha_065_half_life_valid_updates": 0.660252022113693
+  }
+}

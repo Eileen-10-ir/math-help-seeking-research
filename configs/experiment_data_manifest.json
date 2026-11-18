@@ -1,0 +1,10 @@
+{
+  "archive_sha256": "ce576c66710ecfc5300c47497f3379093374ac04ef67f053ad5db59798c2a57e",
+  "prefix": "研究工作区/",
+  "files": {
+    "队友优化验收20261115/交接原包/EduTrace_midterm_handoff/final_results/main_records_final.json": "492912e583e0a82ad32a091ae98d277e2c42bfa4d217ee740b517b5b4c3f9e9f",
+    "队友优化验收20261115/交接原包/EduTrace_midterm_handoff/final_results/multiturn_records_final.json": "e67c1aea42100147e0a2f74e301f79d00edfa89b2d8ea2f44e80457c86430390",
+    "队友优化验收20261115/交接原包/EduTrace_midterm_handoff/configs/midterm_multiturn_v1.json": "5654e753633d2a4afa23bf30ee5d879c92c0cd4fd3cf0558cf0ab8421ace0f70"
+  },
+  "scope": "Archived engineering evaluation inputs; no API secret or real questionnaire added"
+}
